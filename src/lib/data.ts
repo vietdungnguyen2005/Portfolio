@@ -8,9 +8,15 @@ export const profile = {
   email: 'vietdungnguyen2005@gmail.com',
   phone: '(+84) 972 347 459',
   github: 'https://github.com/vietdungnguyen2005',
-  linkedin: 'https://www.linkedin.com/in/nguyen-viet-dung-b4a723355',
+  linkedin: 'https://www.linkedin.com/in/nguy%E1%BB%85n-vi%E1%BB%87t-d%C5%A9ng-b4a723355/',
   portfolio: 'https://viet-dung-portfolio.pages.dev'
 };
+
+export function gmailComposeUrl(subject?: string) {
+  const params = new URLSearchParams({ view: 'cm', fs: '1', to: profile.email });
+  if (subject) params.set('su', subject);
+  return `https://mail.google.com/mail/?${params.toString()}`;
+}
 
 export const navItems = [
   { label: 'About', href: '#about' },
@@ -153,5 +159,5 @@ export const education = [
 export const socials = [
   { label: 'GitHub', href: profile.github, icon: Github },
   { label: 'LinkedIn', href: profile.linkedin, icon: Linkedin },
-  { label: 'Email', href: `mailto:${profile.email}`, icon: Mail }
+  { label: 'Email', href: gmailComposeUrl(), icon: Mail }
 ];

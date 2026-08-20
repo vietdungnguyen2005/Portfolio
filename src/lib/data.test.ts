@@ -10,6 +10,12 @@ describe('portfolio positioning', () => {
     expect(profile.role).toBe('Backend Engineer Intern');
   });
 
+  it('links to the canonical LinkedIn profile', () => {
+    expect(profile.linkedin).toBe(
+      'https://www.linkedin.com/in/nguy%E1%BB%85n-vi%E1%BB%87t-d%C5%A9ng-b4a723355/'
+    );
+  });
+
   it('keeps the visible skill set focused on backend engineering', () => {
     expect(skillTags).toEqual(
       expect.arrayContaining(['Java 21', 'Spring Boot', 'PostgreSQL', 'Redis', 'Testcontainers'])

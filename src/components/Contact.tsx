@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
 
 import { Section } from '@/components/Section';
-import { profile, socials } from '@/lib/data';
+import { gmailComposeUrl, profile, socials } from '@/lib/data';
 
 export function Contact() {
   return (
@@ -20,7 +20,9 @@ export function Contact() {
             operational behavior matter.
           </p>
           <motion.a
-            href={`mailto:${profile.email}?subject=Backend%20Engineer%20Intern%20opportunity`}
+            href={gmailComposeUrl('Backend Engineer Intern opportunity')}
+            target="_blank"
+            rel="noreferrer"
             className="btn-brutal mt-7 inline-flex bg-purple text-white"
             whileHover={{ y: -4, rotate: -1 }}
             whileTap={{ scale: 0.94 }}
@@ -35,7 +37,7 @@ export function Contact() {
           <div className="border-brutal bg-mint p-5 shadow-brutalLg sm:p-6">
             <h3 className="text-xl font-black sm:text-2xl">Get in touch</h3>
             <div className="mt-4 space-y-3">
-              <a href={`mailto:${profile.email}`} className="flex items-center gap-3 text-sm font-black text-[#17151f]/80 transition-colors hover:text-[#17151f] sm:text-base">
+              <a href={gmailComposeUrl()} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-sm font-black text-[#17151f]/80 transition-colors hover:text-[#17151f] sm:text-base">
                 <Mail size={18} aria-hidden="true" />
                 {profile.email}
               </a>

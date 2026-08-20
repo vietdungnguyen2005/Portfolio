@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Image from 'next/image';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, FileCheck2, Github } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { Section } from '@/components/Section';
@@ -21,7 +21,7 @@ export function Projects() {
   );
 
   return (
-    <Section id="projects" eyebrow="Projects" title="Real products, real metrics, real links.">
+    <Section id="projects" eyebrow="Backend case studies" title="Three systems. Three failure modes solved.">
       <div className="responsive-scroll mb-8 flex gap-3 overflow-x-auto pb-2 sm:flex-wrap sm:overflow-visible sm:pb-0" role="group" aria-label="Project technology filters">
         {techFilters.map((filter) => (
           <button
@@ -68,7 +68,9 @@ export function Projects() {
                       {project.period}
                     </span>
                   </div>
-                  <p className="mt-1 text-xs font-black uppercase text-ink/50">{project.role}</p>
+                  <p className="mt-1 text-xs font-black uppercase text-ink/50">
+                    {project.role} · {project.focus}
+                  </p>
                   <p className="mt-3 text-sm font-bold leading-6 text-ink/72 sm:text-base sm:leading-7">{project.description}</p>
 
                   <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${project.title} technologies`}>
@@ -131,6 +133,10 @@ export function Projects() {
                     <a href={project.demo} className="btn-mini" target="_blank" rel="noreferrer">
                       <ExternalLink size={18} aria-hidden="true" />
                       Live Demo
+                    </a>
+                    <a href={project.evidence} className="btn-mini" target="_blank" rel="noreferrer">
+                      <FileCheck2 size={18} aria-hidden="true" />
+                      Evidence
                     </a>
                   </div>
                 </div>

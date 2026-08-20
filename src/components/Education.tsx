@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { GraduationCap, MapPin, Calendar } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 
 import { Section } from '@/components/Section';
 import { education } from '@/lib/data';

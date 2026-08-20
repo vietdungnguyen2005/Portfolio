@@ -1,16 +1,15 @@
-import { Code2, Figma, Gauge, Github, Layers3, Linkedin, Mail, MapPin, Phone, Rocket, Sparkles } from 'lucide-react';
+import { Database, Github, Linkedin, Mail, Repeat2, ShieldCheck } from 'lucide-react';
 
 export const profile = {
   name: 'Viet Dung Nguyen',
-  role: 'Frontend Developer',
-  headline: 'I turn wild interface ideas into fast, friendly web experiences.',
+  role: 'Backend Engineer',
+  headline: 'I build reliable Java services around the business rules that cannot be allowed to fail.',
   location: 'Ho Chi Minh City, Vietnam',
   email: 'vietdungnguyen2005@gmail.com',
   phone: '(+84) 972 347 459',
   github: 'https://github.com/vietdungnguyen2005',
   linkedin: 'https://www.linkedin.com/in/nguyen-viet-dung-b4a723355',
-  portfolio: 'https://viet-dung-portfolio.pages.dev',
-  resume: '/cv-nguyen-viet-dung.pdf'
+  portfolio: 'https://viet-dung-portfolio.pages.dev'
 };
 
 export const navItems = [
@@ -22,104 +21,110 @@ export const navItems = [
 ];
 
 export const skillTags = [
-  'React 19',
-  'Next.js 16',
-  'TypeScript',
-  'Tailwind CSS v4',
-  'Framer Motion',
-  'TanStack Query',
-  'TanStack Table',
-  'TanStack Virtual',
-  'Zustand',
-  'Cloudflare Workers',
-  'Cloudflare Pages',
-  'Cloudflare D1',
-  'Cloudflare R2',
-  'Playwright',
-  'Vitest',
-  'Sanity CMS',
-  'Google Maps API',
-  'Accessibility',
-  'Git',
-  'Figma'
+  'Java 21',
+  'Spring Boot',
+  'PostgreSQL',
+  'Redis',
+  'REST APIs',
+  'Spring Security',
+  'Spring Batch',
+  'JPA / JDBC',
+  'Flyway',
+  'Maven',
+  'JUnit 5',
+  'Testcontainers',
+  'Resilience4j',
+  'Transactions',
+  'Concurrency Control',
+  'Idempotency',
+  'Database Locking',
+  'Outbox Pattern',
+  'Integration Testing',
+  'API Security'
 ];
 
 export const highlights = [
   {
-    icon: Rocket,
-    title: 'Product-minded',
-    text: 'I care about the job behind each screen, not only the pixels on top of it.'
+    icon: Database,
+    title: 'Data correctness',
+    text: 'Transactions, row locks, idempotency, and explicit invariants keep state correct under retries and concurrency.'
   },
   {
-    icon: Gauge,
-    title: 'Performance-first',
-    text: 'Lighthouse 100/100/100/100 on production. I keep motion playful while protecting Core Web Vitals.'
+    icon: Repeat2,
+    title: 'Controlled recovery',
+    text: 'Failures become visible work with bounded retries, quarantine, reconciliation, and auditable recovery paths.'
   },
   {
-    icon: Layers3,
-    title: 'Clean systems',
-    text: 'Reusable components, typed data, and design tokens keep the codebase easy to extend.'
+    icon: ShieldCheck,
+    title: 'Trust boundaries',
+    text: 'Authorization, server-owned decisions, validation, and integration tests protect business operations end to end.'
   }
 ];
 
-export const techFilters = ['All', 'React', 'Next.js', 'TypeScript', 'Tailwind', 'Cloudflare', 'TanStack'];
+export const techFilters = ['All', 'Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Spring Batch', 'Resilience4j'];
 
 export const projects = [
   {
     title: 'V-Core SaaS',
+    focus: 'Concurrency & consistency',
     description:
-      'A Kanban project management workspace deployed on Cloudflare Pages with a D1-backed Worker API. Achieved perfect Lighthouse scores on the live production deployment.',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Cloudflare'],
+      'A multi-tenant project workspace whose backend keeps concurrent Kanban operations correct under contention, retries, and stale client state.',
+    tech: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis'],
     github: 'https://github.com/vietdungnguyen2005/Project1',
     demo: 'https://v-core-saas.pages.dev',
+    evidence: 'https://github.com/vietdungnguyen2005/Project1/blob/main/docs/evidence/README.md',
     image: '/images/project-vcore.webp',
     accent: 'bg-lemon',
-    role: 'Solo Developer',
-    period: '2025',
-    challenge: 'Build a production-grade Kanban SaaS with real-time updates, persistent storage, and zero backend infrastructure costs.',
-    solution: 'Used Cloudflare Pages + D1 Worker API for serverless backend. Implemented debounced commits, transition-wrapped state updates, and memoized rendering to keep inline task updates under 50ms for 10,000+ items.',
+    role: 'Backend case study',
+    period: '2026',
+    challenge: 'Prevent two valid concurrent task moves from silently exceeding a column WIP limit while preserving tenant isolation and retry safety.',
+    solution: 'Implemented short PostgreSQL transactions with deterministic row locking, optimistic versions, durable idempotency records, role-based workspace access, and transactional audit/outbox writes.',
     results: [
-      'Lighthouse 100/100/100/100 on live production',
-      '10,000+ items with inline updates under 50ms',
-      'Single cleanup registry prevents memory leaks on long-lived tabs'
+      'Concurrent moves resolve to exactly one success and one conflict',
+      'Committed task count never exceeds the configured WIP limit',
+      'Retried mutations reuse their original result without duplicating state'
     ]
   },
   {
     title: 'V-Market',
+    focus: 'Legacy modernization',
     description:
-      'A multi-vendor e-commerce storefront deployed on Cloudflare Workers with server-validated order persistence to Cloudflare R2 and Playwright E2E tests across 3 viewports.',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Cloudflare'],
+      'A commerce backend that combines transactional checkout with a controlled migration path for Japanese CP932 inventory feeds.',
+    tech: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Spring Batch'],
     github: 'https://github.com/vietdungnguyen2005/Project2',
     demo: 'https://v-market.vmarket-vietdung2005.workers.dev',
+    evidence: 'https://github.com/vietdungnguyen2005/Project2/blob/main/docs/EVIDENCE.md',
     image: '/images/project-vmarket.webp',
     accent: 'bg-mint',
-    role: 'Solo Developer',
-    period: '2025',
-    challenge: 'Build a full e-commerce platform with cart persistence, order validation, and responsive design — all on edge infrastructure.',
-    solution: 'Deployed on Cloudflare Workers via OpenNext. Server-validated orders persisted to R2. Eliminated CLS with next/image AVIF/WebP responsive srcset and fixed aspect-ratio wrappers. Resolved cart API race conditions using per-product AbortController cancellation and sequenced optimistic TanStack Query mutations.',
+    role: 'Backend case study',
+    period: '2026',
+    challenge: 'Modernize a fragile legacy file exchange without letting malformed rows poison valid inventory updates or interrupt daily commerce.',
+    solution: 'Built restartable Spring Batch ingestion with explicit Windows-31J decoding, staged validation, quarantine, checksum deduplication, checkpoints, and post-import reconciliation. Checkout locks inventory in deterministic SKU order.',
     results: [
-      'Zero CLS, optimized LCP on 3G/4G networks',
-      'Playwright E2E tests across 320px, 390px, and desktop viewports',
-      'Provable stale-payload rejection on cart mutations'
+      'Valid rows apply while invalid rows remain quarantined and explainable',
+      'Concurrent checkout cannot oversell inventory',
+      'Reconciliation exposes migration drift instead of hiding it'
     ]
   },
   {
     title: 'V-Pulse',
+    focus: 'Failure containment',
     description:
-      'An enterprise fintech transaction ledger dashboard rendering 100,000 rows using TanStack Table with row virtualization and server-windowed fetching.',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'TanStack'],
+      'A payment reliability backend that contains slow or unhealthy downstream rails and makes uncertain work recoverable by operators.',
+    tech: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Resilience4j'],
     github: 'https://github.com/vietdungnguyen2005/Project3',
-    demo: 'https://v-pulse-ledger-dashboard.vmarket-vietdung2005.workers.dev',
+    demo: 'https://v-pulse-payment-ops.vmarket-vietdung2005.workers.dev',
+    evidence: 'https://github.com/vietdungnguyen2005/Project3/blob/main/docs/PAIN_POINT_PROOF.md',
     image: '/images/project-vpulse.webp',
     accent: 'bg-lilac',
-    role: 'Solo Developer',
-    period: '2025',
-    challenge: 'Render and interact with 100,000+ transaction rows in a fintech dashboard without exposing backend tokens to the client.',
-    solution: 'Built with TanStack Table + TanStack Virtual for row virtualization and server-windowed fetching. Implemented a server-side Next.js API brokerage layer that proxies sensitive ledger endpoints — no backend tokens ever reach the client. Added nonce-based Content Security Policy and console removal.',
+    role: 'Backend case study',
+    period: '2026',
+    challenge: 'Handle ambiguous payment timeouts without blind retries, duplicate effects, long database transactions, or invisible stuck work.',
+    solution: 'Separated short state transitions from downstream I/O, bounded calls with timeouts, circuit breakers and bulkheads, parked uncertain instructions, and claimed authorized replay atomically.',
     results: [
-      '100,000 rows rendered with smooth virtualization',
-      'Zero backend token exposure via server-side API proxy',
-      'Realtime transaction streaming with synthetic demo mode fallback'
+      'A timed-out payment is persisted as PARKED rather than lost',
+      'Authorized replay transitions the same instruction to SUCCEEDED',
+      'Attempt history preserves TIMEOUT then AUTHORIZED for auditability'
     ]
   }
 ];
@@ -156,6 +161,5 @@ export const education = [
 export const socials = [
   { label: 'GitHub', href: profile.github, icon: Github },
   { label: 'LinkedIn', href: profile.linkedin, icon: Linkedin },
-  { label: 'Email', href: `mailto:${profile.email}`, icon: Mail },
-  { label: 'Download CV', href: profile.resume, icon: Code2 }
+  { label: 'Email', href: `mailto:${profile.email}`, icon: Mail }
 ];

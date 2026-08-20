@@ -116,6 +116,13 @@ textarea {
   background-color: var(--lilac);
 }
 
+.bg-lemon,
+.bg-mint,
+.bg-peach,
+.bg-lilac {
+  color: #17151f;
+}
+
 .text-ink {
   color: var(--ink);
 }
@@ -155,7 +162,7 @@ textarea {
   border: 4px solid var(--ink);
   border-radius: 8px;
   background: var(--lemon);
-  color: var(--ink);
+  color: #17151f;
   padding: 0.6rem 0.85rem;
   font-size: 0.78rem;
   font-weight: 900;
@@ -184,6 +191,12 @@ textarea {
 
 .btn-brutal.text-white {
   color: #ffffff;
+}
+
+.btn-brutal.bg-lemon,
+.btn-brutal.bg-mint,
+.btn-brutal.bg-peach {
+  color: #17151f;
 }
 
 .btn-brutal {
@@ -244,29 +257,6 @@ textarea {
   border-radius: 999px;
 }
 
-.form-field {
-  display: grid;
-  gap: 0.6rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.form-field input,
-.form-field textarea {
-  width: 100%;
-  border: 4px solid var(--ink);
-  border-radius: 8px;
-  background: var(--page);
-  color: var(--ink);
-  padding: 0.95rem;
-  font: inherit;
-  font-weight: 800;
-  text-transform: none;
-  box-shadow: 5px 5px 0 var(--shadow-color);
-}
-
-.form-field input:focus,
-.form-field textarea:focus,
 a:focus-visible,
 button:focus-visible {
   outline: 4px solid var(--purple);

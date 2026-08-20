@@ -1,12 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { ArrowDownRight, Download, Github, Mail, Sparkles } from 'lucide-react';
+import { ArrowDownRight, Github, Mail, Sparkles } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 import { profile } from '@/lib/data';
 
-const words = ['Frontend', 'Playful UI', 'Fast UX'];
+const words = ['Java 21', 'Spring Boot', 'PostgreSQL'];
 
 export function Hero() {
   const { scrollYProgress } = useScroll();
@@ -27,7 +27,7 @@ export function Hero() {
             transition={{ duration: 0.35 }}
           >
             <Sparkles size={18} aria-hidden="true" />
-            Available for frontend roles
+            Viet Dung Nguyen · Backend Engineer
           </motion.p>
           <motion.h1
             id="hero-title"
@@ -36,7 +36,7 @@ export function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.06, duration: 0.42 }}
           >
-            Hi, I'm Dung. I make interfaces pop without making users panic.
+            I build backends that stay correct when real-world traffic gets messy.
           </motion.h1>
           <motion.p
             className="mt-5 max-w-2xl text-base font-bold leading-7 text-ink/78 sm:text-lg sm:leading-8 lg:text-xl"
@@ -44,7 +44,8 @@ export function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.12, duration: 0.42 }}
           >
-            {profile.headline} Built with React, TypeScript, careful motion, and a stubborn respect for performance.
+            {profile.headline} My work focuses on transactions, concurrency, data migration, failure containment, and
+            integration tests that prove the difficult paths.
           </motion.p>
           <motion.div
             className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4"
@@ -55,10 +56,6 @@ export function Hero() {
             <a href="#projects" className="btn-brutal bg-purple text-white">
               See projects
               <ArrowDownRight size={22} aria-hidden="true" />
-            </a>
-            <a href={profile.resume} className="btn-brutal bg-lemon" download>
-              <Download size={22} aria-hidden="true" />
-              Download CV
             </a>
             <a href={profile.github} className="btn-brutal bg-mint" target="_blank" rel="noreferrer">
               <Github size={22} aria-hidden="true" />
@@ -75,7 +72,7 @@ export function Hero() {
           <div className="border-brutal relative overflow-hidden bg-peach p-3 shadow-brutalLg sm:p-4">
             <Image
               src="/images/avatar.webp"
-              alt="Graphic avatar of Viet Dung Nguyen with playful interface shapes"
+              alt="Graphic portrait of Viet Dung Nguyen labeled Java 21 and Backend"
               width={720}
               height={720}
               priority

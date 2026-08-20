@@ -7,16 +7,16 @@ import { highlights, skillTags } from '@/lib/data';
 
 export function About() {
   return (
-    <Section id="about" eyebrow="About me" title="A frontend developer who likes neat code and noisy buttons.">
+    <Section id="about" eyebrow="Backend focus" title="Business rules first. Failure paths included.">
       <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8">
         <div className="border-brutal bg-mint p-5 shadow-brutalLg sm:p-6">
           <p className="text-lg font-black leading-7 sm:text-xl sm:leading-8">
-            I build responsive web products with React, Next.js, TypeScript, and Tailwind CSS. My sweet spot is turning
-            rough product ideas into interfaces that feel clear, lively, and reliable.
+            I build Java and Spring Boot services for workflows where duplicate requests, concurrent updates, malformed
+            data, and unreliable dependencies are normal engineering constraints—not edge cases to ignore.
           </p>
-          <p className="mt-5 text-base font-bold leading-7 text-ink/75">
-            I pay attention to component architecture, accessibility, loading speed, and the small motion details that make
-            a product feel cared for. I like UI that has personality, but I like maintainable code even more.
+          <p className="mt-5 text-base font-bold leading-7 text-[#17151f]/75">
+            I model invariants explicitly, keep transactions short, make recovery observable in the domain, and verify the
+            result against real PostgreSQL and Redis instances with integration tests.
           </p>
         </div>
 
@@ -39,8 +39,8 @@ export function About() {
         </div>
       </div>
 
-      <div className="mt-8 min-h-48 border-brutal bg-lemon p-4 shadow-brutalLg sm:mt-10 sm:min-h-56 sm:p-5" aria-label="Draggable skill tags">
-        <p className="mb-5 font-black uppercase">Drag the skill stickers</p>
+      <div className="mt-8 min-h-48 border-brutal bg-lemon p-4 shadow-brutalLg sm:mt-10 sm:min-h-56 sm:p-5" aria-label="Backend engineering skills">
+        <p className="mb-5 font-black uppercase">Backend toolkit</p>
         <div className="flex flex-wrap gap-2 sm:gap-3">
           {skillTags.map((skill, index) => (
             <motion.button

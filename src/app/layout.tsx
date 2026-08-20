@@ -4,9 +4,9 @@ import '@/app/globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { profile } from '@/lib/data';
 
-const title = `${profile.name} | Frontend Developer Portfolio`;
+const title = `${profile.name} | Backend Engineer`;
 const description =
-  'Playful, performance-minded Frontend Developer portfolio by Viet Dung Nguyen, built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.';
+  'Backend Engineer portfolio by Viet Dung Nguyen, featuring Java, Spring Boot, PostgreSQL, Redis, concurrency control, legacy modernization, and resilient payment workflows.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://viet-dung-portfolio.pages.dev'),
@@ -16,12 +16,16 @@ export const metadata: Metadata = {
   authors: [{ name: profile.name }],
   creator: profile.name,
   keywords: [
-    'Frontend Developer',
-    'React Developer',
-    'Next.js',
-    'TypeScript',
-    'Tailwind CSS',
-    'Framer Motion',
+    'Backend Engineer',
+    'Java Developer',
+    'Java 21',
+    'Spring Boot',
+    'PostgreSQL',
+    'Redis',
+    'REST API',
+    'Testcontainers',
+    'Spring Batch',
+    'Resilience4j',
     'Portfolio'
   ],
   alternates: {
@@ -40,7 +44,7 @@ export const metadata: Metadata = {
         url: '/og-image.webp',
         width: 1200,
         height: 630,
-        alt: `${profile.name} Frontend Developer Portfolio`
+        alt: `${profile.name} Backend Engineer Portfolio`
       }
     ],
     locale: 'en_US',
@@ -84,18 +88,18 @@ const jsonLd = {
   telephone: profile.phone,
   sameAs: [profile.github, profile.linkedin],
   knowsAbout: [
-    'React 19',
-    'Next.js 16',
-    'TypeScript',
-    'Tailwind CSS',
-    'Framer Motion',
-    'TanStack Query',
-    'TanStack Table',
-    'Cloudflare Workers',
-    'Cloudflare Pages',
-    'Accessibility'
+    'Java 21',
+    'Spring Boot',
+    'PostgreSQL',
+    'Redis',
+    'REST API design',
+    'Transaction management',
+    'Concurrency control',
+    'Spring Batch',
+    'Resilience4j',
+    'Testcontainers'
   ],
-  alumni: {
+  alumniOf: {
     '@type': 'CollegeOrUniversity',
     name: 'University of Information Technology — VNU-HCM'
   }

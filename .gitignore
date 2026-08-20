@@ -1,8 +1,8 @@
 .next/
 out/
+qa-artifacts/
 node_modules/
 .env*
-!.env.example
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

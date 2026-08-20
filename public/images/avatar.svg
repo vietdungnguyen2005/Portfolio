@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720">
+  <defs>
+    <pattern id="hatch" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="24" stroke="#201d2d" stroke-opacity="0.12" stroke-width="3" />
+    </pattern>
+  </defs>
+  <rect width="720" height="720" fill="#fff5cc" />
+  <rect width="720" height="720" fill="url(#hatch)" />
+  <rect x="104" y="104" width="512" height="512" rx="10" fill="#201d2d" transform="translate(18 18)" />
+  <rect x="104" y="104" width="512" height="512" rx="10" fill="#72e7c0" stroke="#201d2d" stroke-width="8" />
+  <circle cx="360" cy="298" r="136" fill="#ffac7a" stroke="#201d2d" stroke-width="8" />
+  <path d="M244 282c18 34 68 34 88 0M388 282c18 34 68 34 88 0M300 364c30 42 90 42 120 0" fill="none" stroke="#201d2d" stroke-width="9" stroke-linecap="round" />
+  <path d="M216 596v-86c0-62 50-112 112-112h64c62 0 112 50 112 112v86" fill="#7439ff" stroke="#201d2d" stroke-width="8" />
+  <rect x="372" y="66" width="176" height="58" rx="8" fill="#ffffff" stroke="#201d2d" stroke-width="7" />
+  <text x="406" y="104" fill="#201d2d" font-family="Arial, sans-serif" font-size="27" font-weight="900">JAVA 21</text>
+  <rect x="142" y="562" width="214" height="58" rx="8" fill="#f3ff3f" stroke="#201d2d" stroke-width="7" />
+  <text x="171" y="600" fill="#201d2d" font-family="Arial, sans-serif" font-size="27" font-weight="900">BACKEND</text>
+</svg>

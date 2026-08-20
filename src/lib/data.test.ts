@@ -3,11 +3,11 @@ import { join } from 'node:path';
 
 import { describe, expect, it } from 'vitest';
 
-import { profile, projects, skillTags } from './data';
+import { experiences, profile, projects, skillTags } from './data';
 
 describe('portfolio positioning', () => {
   it('positions Viet Dung as a backend engineer', () => {
-    expect(profile.role).toBe('Backend Engineer');
+    expect(profile.role).toBe('Backend Engineer Intern');
   });
 
   it('keeps the visible skill set focused on backend engineering', () => {
@@ -33,5 +33,16 @@ describe('portfolio positioning', () => {
     for (const project of projects) {
       expect(existsSync(join(process.cwd(), 'public', project.image))).toBe(true);
     }
+  });
+
+  it('describes the internship as full-stack work', () => {
+    expect(experiences[0].title).toBe('Full-stack Developer Intern');
+  });
+
+  it('keeps the intern skill summary concise and evidence-based', () => {
+    expect(skillTags).toHaveLength(12);
+    expect(skillTags).toEqual(
+      expect.arrayContaining(['Java 21', 'Spring Boot', 'REST APIs', 'PostgreSQL', 'JUnit 5'])
+    );
   });
 });

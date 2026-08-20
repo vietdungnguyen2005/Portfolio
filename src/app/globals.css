@@ -90,6 +90,7 @@ textarea {
 
 .bg-page {
   background-color: var(--page);
+  color: var(--ink);
 }
 
 .bg-ink {

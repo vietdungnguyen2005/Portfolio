@@ -11,16 +11,16 @@ export function Contact() {
     <Section id="contact" eyebrow="Contact" title="Let's talk about backend systems.">
       <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
         <div className="border-brutal bg-peach p-5 shadow-brutalLg sm:p-7 md:p-9">
-          <p className="brutal-label inline-block bg-lemon">Open to backend roles</p>
+          <p className="brutal-label inline-block bg-lemon">Open to backend internships</p>
           <h3 className="mt-6 max-w-2xl text-2xl font-black leading-tight sm:text-3xl md:text-4xl">
             Need someone who cares about what happens when requests race, fail, or get retried?
           </h3>
           <p className="mt-5 max-w-2xl text-base font-bold leading-7 text-[#17151f]/75 sm:text-lg">
-            I am interested in Backend Engineer opportunities where correctness, maintainable Java services, and clear
+            I am interested in Backend Engineer internship opportunities where correctness, maintainable Java services, and clear
             operational behavior matter.
           </p>
           <motion.a
-            href={`mailto:${profile.email}?subject=Backend%20Engineer%20opportunity`}
+            href={`mailto:${profile.email}?subject=Backend%20Engineer%20Intern%20opportunity`}
             className="btn-brutal mt-7 inline-flex bg-purple text-white"
             whileHover={{ y: -4, rotate: -1 }}
             whileTap={{ scale: 0.94 }}

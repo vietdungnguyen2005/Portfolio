@@ -2,7 +2,7 @@ import { Database, Github, Linkedin, Mail, Repeat2, ShieldCheck } from 'lucide-r
 
 export const profile = {
   name: 'Viet Dung Nguyen',
-  role: 'Backend Engineer',
+  role: 'Backend Engineer Intern',
   headline: 'I build reliable Java services around the business rules that cannot be allowed to fail.',
   location: 'Ho Chi Minh City, Vietnam',
   email: 'vietdungnguyen2005@gmail.com',
@@ -23,24 +23,16 @@ export const navItems = [
 export const skillTags = [
   'Java 21',
   'Spring Boot',
+  'REST APIs',
   'PostgreSQL',
   'Redis',
-  'REST APIs',
-  'Spring Security',
-  'Spring Batch',
+  'SQL',
   'JPA / JDBC',
+  'Spring Security',
   'Flyway',
   'Maven',
   'JUnit 5',
-  'Testcontainers',
-  'Resilience4j',
-  'Transactions',
-  'Concurrency Control',
-  'Idempotency',
-  'Database Locking',
-  'Outbox Pattern',
-  'Integration Testing',
-  'API Security'
+  'Testcontainers'
 ];
 
 export const highlights = [
@@ -131,7 +123,7 @@ export const projects = [
 
 export const experiences = [
   {
-    title: 'Frontend Developer Intern',
+    title: 'Full-stack Developer Intern',
     company: 'Phu Quoc Times',
     location: 'Phu Quoc, Vietnam',
     period: 'July 2026 – Present',

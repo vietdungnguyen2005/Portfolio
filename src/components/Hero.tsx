@@ -27,7 +27,7 @@ export function Hero() {
             transition={{ duration: 0.35 }}
           >
             <Sparkles size={18} aria-hidden="true" />
-            Viet Dung Nguyen · Backend Engineer
+            Viet Dung Nguyen · Backend Engineer Intern
           </motion.p>
           <motion.h1
             id="hero-title"

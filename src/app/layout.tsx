@@ -4,9 +4,9 @@ import '@/app/globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { profile } from '@/lib/data';
 
-const title = `${profile.name} | Backend Engineer`;
+const title = `${profile.name} | Backend Engineer Intern`;
 const description =
-  'Backend Engineer portfolio by Viet Dung Nguyen, featuring Java, Spring Boot, PostgreSQL, Redis, concurrency control, legacy modernization, and resilient payment workflows.';
+  'Backend Engineer Intern portfolio by Viet Dung Nguyen, featuring Java, Spring Boot, PostgreSQL, Redis, concurrency control, legacy modernization, and resilient payment workflows.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://viet-dung-portfolio.pages.dev'),
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   creator: profile.name,
   keywords: [
     'Backend Engineer',
+    'Backend Engineer Intern',
     'Java Developer',
     'Java 21',
     'Spring Boot',

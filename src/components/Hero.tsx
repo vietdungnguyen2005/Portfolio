@@ -72,7 +72,7 @@ export function Hero() {
           <div className="border-brutal relative overflow-hidden bg-peach p-3 shadow-brutalLg sm:p-4">
             <Image
               src="/images/avatar.webp"
-              alt="Graphic portrait of Viet Dung Nguyen labeled Java 21 and Backend"
+              alt="Portrait photo of Viet Dung Nguyen"
               width={720}
               height={720}
               priority

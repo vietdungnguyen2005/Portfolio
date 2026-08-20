@@ -11,4 +11,10 @@ describe('Hero', () => {
     expect(html).not.toContain('Download CV');
     expect(html).not.toContain('Available for frontend roles');
   });
+
+  it('describes the photographic avatar accurately', () => {
+    const html = renderToStaticMarkup(<Hero />);
+
+    expect(html).toContain('alt="Portrait photo of Viet Dung Nguyen"');
+  });
 });

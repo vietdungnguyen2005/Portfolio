@@ -6,7 +6,7 @@ import { profile } from '@/lib/data';
 
 const title = `${profile.name} | Backend Engineer Intern`;
 const description =
-  'Backend Engineer Intern portfolio by Viet Dung Nguyen, featuring Java, Spring Boot, PostgreSQL, Redis, concurrency control, legacy modernization, and resilient payment workflows.';
+  `Backend Engineer Intern portfolio by ${profile.name}, featuring Java, Spring Boot, PostgreSQL, Redis, concurrency control, legacy modernization, and resilient payment workflows.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://viet-dung-portfolio.pages.dev'),

@@ -19,7 +19,7 @@ export function Header() {
           href="#top"
           className="border-brutal bg-lemon px-3 py-2 text-xs font-black uppercase shadow-brutalSm transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-purple sm:text-sm"
         >
-          {profile.name.split(' ')[0]}.dev
+          {profile.brand}
         </a>
         <div className="order-3 flex w-full items-center gap-2 overflow-x-auto pb-1 md:order-none md:w-auto md:overflow-visible md:pb-0">
           {navItems.map((item) => (

@@ -15,6 +15,6 @@ describe('Hero', () => {
   it('describes the photographic avatar accurately', () => {
     const html = renderToStaticMarkup(<Hero />);
 
-    expect(html).toContain('alt="Portrait photo of Viet Dung Nguyen"');
+    expect(html).toContain('alt="Portrait photo of Nguyen Viet Dung"');
   });
 });

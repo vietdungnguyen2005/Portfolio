@@ -1,7 +1,8 @@
 import { Database, Github, Linkedin, Mail, Repeat2, ShieldCheck } from 'lucide-react';
 
 export const profile = {
-  name: 'Viet Dung Nguyen',
+  name: 'Nguyen Viet Dung',
+  brand: 'vietdung.dev',
   role: 'Backend Engineer Intern',
   headline: 'I build reliable Java services around the business rules that cannot be allowed to fail.',
   location: 'Ho Chi Minh City, Vietnam',

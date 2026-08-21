@@ -27,7 +27,7 @@ export function Hero() {
             transition={{ duration: 0.35 }}
           >
             <Sparkles size={18} aria-hidden="true" />
-            Viet Dung Nguyen · Backend Engineer Intern
+            {profile.name} · {profile.role}
           </motion.p>
           <motion.h1
             id="hero-title"
@@ -72,7 +72,7 @@ export function Hero() {
           <div className="border-brutal relative overflow-hidden bg-peach p-3 shadow-brutalLg sm:p-4">
             <Image
               src="/images/avatar.webp"
-              alt="Portrait photo of Viet Dung Nguyen"
+              alt={`Portrait photo of ${profile.name}`}
               width={720}
               height={720}
               priority

@@ -6,7 +6,12 @@ import { describe, expect, it } from 'vitest';
 import { experiences, profile, projects, skillTags } from './data';
 
 describe('portfolio positioning', () => {
-  it('positions Viet Dung as a backend engineer', () => {
+  it('uses the canonical Vietnamese name and a stable personal brand', () => {
+    expect(profile.name).toBe('Nguyen Viet Dung');
+    expect(profile.brand).toBe('vietdung.dev');
+  });
+
+  it('positions the owner as a backend engineer', () => {
     expect(profile.role).toBe('Backend Engineer Intern');
   });
 

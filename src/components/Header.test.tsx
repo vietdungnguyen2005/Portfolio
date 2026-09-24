@@ -12,7 +12,8 @@ describe('Header', () => {
       </ThemeProvider>
     );
 
-    expect(html).toContain('vietdung.dev');
+    expect(html).toContain('vietdung');
+    expect(html).not.toContain('vietdung.dev');
     expect(html).not.toContain('Nguyen.dev');
   });
 });

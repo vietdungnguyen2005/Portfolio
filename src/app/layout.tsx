@@ -4,9 +4,9 @@ import '@/app/globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { profile } from '@/lib/data';
 
-const title = `${profile.name} | Backend Engineer Intern`;
+const title = `${profile.name} | Java Backend & Full-stack Developer`;
 const description =
-  `Backend Engineer Intern portfolio by ${profile.name}, featuring Java, Spring Boot, PostgreSQL, Redis, concurrency control, legacy modernization, and resilient payment workflows.`;
+  `Portfolio of ${profile.name}, an Information Security student and full-stack developer intern building production web applications and Java/Spring Boot services with React, Next.js, PostgreSQL, and Redis.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://viet-dung-portfolio.pages.dev'),
@@ -16,17 +16,19 @@ export const metadata: Metadata = {
   authors: [{ name: profile.name }],
   creator: profile.name,
   keywords: [
-    'Backend Engineer',
-    'Backend Engineer Intern',
+    'Software Developer',
+    'Software Engineer',
+    'Full-stack Developer',
+    'Backend Developer',
     'Java Developer',
     'Java 21',
     'Spring Boot',
     'PostgreSQL',
     'Redis',
     'REST API',
-    'Testcontainers',
-    'Spring Batch',
-    'Resilience4j',
+    'React',
+    'Next.js',
+    'TypeScript',
     'Portfolio'
   ],
   alternates: {
@@ -45,7 +47,7 @@ export const metadata: Metadata = {
         url: '/og-image.webp',
         width: 1200,
         height: 630,
-        alt: `${profile.name} Backend Engineer Portfolio`
+        alt: `${profile.name} Software Developer Portfolio`
       }
     ],
     locale: 'en_US',
@@ -91,14 +93,14 @@ const jsonLd = {
   knowsAbout: [
     'Java 21',
     'Spring Boot',
+    'TypeScript',
+    'React',
+    'Next.js',
     'PostgreSQL',
     'Redis',
     'REST API design',
-    'Transaction management',
-    'Concurrency control',
-    'Spring Batch',
-    'Resilience4j',
-    'Testcontainers'
+    'Software testing',
+    'Web application development'
   ],
   alumniOf: {
     '@type': 'CollegeOrUniversity',

@@ -21,7 +21,7 @@ export function Projects() {
   );
 
   return (
-    <Section id="projects" eyebrow="Backend case studies" title="Three systems. Three failure modes solved.">
+    <Section id="projects" eyebrow="Selected Projects" title="Systems built around real engineering constraints.">
       <div className="responsive-scroll mb-8 flex gap-3 overflow-x-auto pb-2 sm:flex-wrap sm:overflow-visible sm:pb-0" role="group" aria-label="Project technology filters">
         {techFilters.map((filter) => (
           <button
@@ -136,7 +136,7 @@ export function Projects() {
                     </a>
                     <a href={project.evidence} className="btn-mini" target="_blank" rel="noreferrer">
                       <FileCheck2 size={18} aria-hidden="true" />
-                      Evidence
+                      Tests & Evidence
                     </a>
                   </div>
                 </div>

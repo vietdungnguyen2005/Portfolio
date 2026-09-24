@@ -39,7 +39,15 @@ export function Experience() {
               {exp.highlights.map((item, i) => (
                 <li key={i} className="flex gap-3 text-sm font-bold leading-6 text-ink/75 sm:text-base">
                   <span className="mt-2.5 h-2 w-2 shrink-0 rotate-45 bg-purple" aria-hidden="true" />
-                  {item}
+                  <span>
+                    {item.before}
+                    {item.link && (
+                      <a href={item.link.href} target="_blank" rel="noreferrer" className="font-black text-ink underline decoration-2 underline-offset-4 hover:text-purple">
+                        {item.link.label}
+                      </a>
+                    )}
+                    {item.after}
+                  </span>
                 </li>
               ))}
             </ul>

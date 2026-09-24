@@ -1,6 +1,6 @@
-# Nguyen Viet Dung — Backend Engineer Intern Portfolio
+# Nguyen Viet Dung — Software Developer Portfolio
 
-This portfolio presents three backend engineering case studies built with Java 21, Spring Boot, PostgreSQL, and Redis. The interface is a statically exported Next.js site; the engineering focus is transaction correctness, legacy modernization, and failure containment.
+One portfolio for Java backend, software developer, and full-stack applications. It presents production web work at Phu Quoc Times, three Java backend case studies, and a research paper accepted at FDSE 2026. The interface is a statically exported Next.js site.
 
 ## Case studies
 

@@ -4,12 +4,12 @@ import { describe, expect, it } from 'vitest';
 import { Hero } from './Hero';
 
 describe('Hero', () => {
-  it('leads with backend positioning and no broken resume action', () => {
+  it('introduces both Java backend and production web work without a role-specific internship label', () => {
     const html = renderToStaticMarkup(<Hero />);
 
-    expect(html).toContain('Backend Engineer');
-    expect(html).not.toContain('Download CV');
-    expect(html).not.toContain('Available for frontend roles');
+    expect(html).toContain('I build reliable web applications and Java backend services.');
+    expect(html).toContain('full-stack developer intern');
+    expect(html).not.toContain('Backend Engineer Intern');
   });
 
   it('describes the photographic avatar accurately', () => {

@@ -1,10 +1,11 @@
-import { Database, Github, Linkedin, Mail, Repeat2, ShieldCheck } from 'lucide-react';
+import { Braces, Database, Github, Linkedin, Mail, PackageCheck } from 'lucide-react';
 
 export const profile = {
   name: 'Nguyen Viet Dung',
-  brand: 'vietdung.dev',
-  role: 'Backend Engineer Intern',
-  headline: 'I build reliable Java services around the business rules that cannot be allowed to fail.',
+  brand: 'vietdung',
+  role: 'Software Developer',
+  headline:
+    'Information Security student and full-stack developer intern with production web experience and hands-on Java/Spring Boot projects across APIs, data, testing, and deployment.',
   location: 'Ho Chi Minh City, Vietnam',
   email: 'vietdungnguyen2005@gmail.com',
   phone: '(+84) 972 347 459',
@@ -13,56 +14,68 @@ export const profile = {
   portfolio: 'https://viet-dung-portfolio.pages.dev'
 };
 
-export function gmailComposeUrl(subject?: string) {
-  const params = new URLSearchParams({ view: 'cm', fs: '1', to: profile.email });
-  if (subject) params.set('su', subject);
-  return `https://mail.google.com/mail/?${params.toString()}`;
+export function emailUrl(subject?: string) {
+  if (!subject) return `mailto:${profile.email}`;
+  return `mailto:${profile.email}?${new URLSearchParams({ subject }).toString()}`;
 }
 
 export const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Research', href: '#research' },
   { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' }
 ];
 
-export const skillTags = [
-  'Java 21',
-  'Spring Boot',
-  'REST APIs',
-  'PostgreSQL',
-  'Redis',
-  'SQL',
-  'JPA / JDBC',
-  'Spring Security',
-  'Flyway',
-  'Maven',
-  'JUnit 5',
-  'Testcontainers'
+export const skillGroups = [
+  { title: 'Backend', accent: 'bg-mint', skills: ['Java 21', 'Spring Boot', 'REST APIs', 'JPA / Hibernate'] },
+  { title: 'Web', accent: 'bg-peach', skills: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'HTML / CSS'] },
+  { title: 'Data, testing & delivery', accent: 'bg-lemon', skills: ['PostgreSQL', 'Redis', 'SQL', 'JUnit 5', 'Testcontainers', 'Git', 'Docker'] }
 ];
 
 export const highlights = [
   {
+    icon: Braces,
+    title: 'Backend development',
+    text: 'REST APIs, business logic, validation, persistence, and third-party integrations.'
+  },
+  {
     icon: Database,
-    title: 'Data correctness',
-    text: 'Transactions, row locks, idempotency, and explicit invariants keep state correct under retries and concurrency.'
+    title: 'Data & reliability',
+    text: 'Transactions, concurrency handling, caching, idempotency, and data processing.'
   },
   {
-    icon: Repeat2,
-    title: 'Controlled recovery',
-    text: 'Failures become visible work with bounded retries, quarantine, reconciliation, and auditable recovery paths.'
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Trust boundaries',
-    text: 'Authorization, server-owned decisions, validation, and integration tests protect business operations end to end.'
+    icon: PackageCheck,
+    title: 'Testing & delivery',
+    text: 'JUnit, Testcontainers, Git, CI, Docker, and production deployment.'
   }
 ];
 
 export const techFilters = ['All', 'Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Spring Batch', 'Resilience4j'];
 
 export const projects = [
+  {
+    title: 'V-Market',
+    focus: 'Transactional commerce & data ingestion',
+    description:
+      'A commerce backend that combines transactional checkout with a controlled migration path for Japanese CP932 inventory feeds.',
+    tech: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Spring Batch'],
+    github: 'https://github.com/vietdungnguyen2005/Project2',
+    demo: 'https://v-market.vmarket-vietdung2005.workers.dev',
+    evidence: 'https://github.com/vietdungnguyen2005/Project2/blob/main/docs/EVIDENCE.md',
+    image: '/images/project-vmarket.webp',
+    accent: 'bg-mint',
+    role: 'Backend case study',
+    period: '2026',
+    challenge: 'Model checkout and Japanese vendor-file ingestion so concurrent orders cannot oversell stock and invalid rows stay visible.',
+    solution: 'Built transactional checkout with PostgreSQL row locks and a Spring Batch tasklet that decodes Windows-31J files, stages rows, applies small committed groups, and records rejects and reconciliation differences.',
+    results: [
+      'Valid rows apply while invalid rows remain quarantined and explainable',
+      'Concurrent checkout cannot oversell inventory',
+      'Reconciliation exposes migration drift instead of hiding it'
+    ]
+  },
   {
     title: 'V-Core SaaS',
     focus: 'Concurrency & consistency',
@@ -77,32 +90,11 @@ export const projects = [
     role: 'Backend case study',
     period: '2026',
     challenge: 'Prevent two valid concurrent task moves from silently exceeding a column WIP limit while preserving tenant isolation and retry safety.',
-    solution: 'Implemented short PostgreSQL transactions with deterministic row locking, optimistic versions, durable idempotency records, role-based workspace access, and transactional audit/outbox writes.',
+    solution: 'Implemented short PostgreSQL transactions with target-column locking, optimistic versions, durable idempotency records, workspace access checks, and transactional audit/outbox writes.',
     results: [
-      'Concurrent moves resolve to exactly one success and one conflict',
-      'Committed task count never exceeds the configured WIP limit',
+      'Concurrent moves resolve to exactly one success and one conflict in the tested scenario',
+      'Committed task count stays within the configured WIP limit in the concurrency test',
       'Retried mutations reuse their original result without duplicating state'
-    ]
-  },
-  {
-    title: 'V-Market',
-    focus: 'Legacy modernization',
-    description:
-      'A commerce backend that combines transactional checkout with a controlled migration path for Japanese CP932 inventory feeds.',
-    tech: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Spring Batch'],
-    github: 'https://github.com/vietdungnguyen2005/Project2',
-    demo: 'https://v-market.vmarket-vietdung2005.workers.dev',
-    evidence: 'https://github.com/vietdungnguyen2005/Project2/blob/main/docs/EVIDENCE.md',
-    image: '/images/project-vmarket.webp',
-    accent: 'bg-mint',
-    role: 'Backend case study',
-    period: '2026',
-    challenge: 'Modernize a fragile legacy file exchange without letting malformed rows poison valid inventory updates or interrupt daily commerce.',
-    solution: 'Built restartable Spring Batch ingestion with explicit Windows-31J decoding, staged validation, quarantine, checksum deduplication, checkpoints, and post-import reconciliation. Checkout locks inventory in deterministic SKU order.',
-    results: [
-      'Valid rows apply while invalid rows remain quarantined and explainable',
-      'Concurrent checkout cannot oversell inventory',
-      'Reconciliation exposes migration drift instead of hiding it'
     ]
   },
   {
@@ -118,7 +110,7 @@ export const projects = [
     accent: 'bg-lilac',
     role: 'Backend case study',
     period: '2026',
-    challenge: 'Handle ambiguous payment timeouts without blind retries, duplicate effects, long database transactions, or invisible stuck work.',
+    challenge: 'Make slow and uncertain payment operations visible without holding a database transaction during the downstream call.',
     solution: 'Separated short state transitions from downstream I/O, bounded calls with timeouts, circuit breakers and bulkheads, parked uncertain instructions, and claimed authorized replay atomically.',
     results: [
       'A timed-out payment is persisted as PARKED rather than lost',
@@ -128,27 +120,51 @@ export const projects = [
   }
 ];
 
-export const experiences = [
+type ExperienceHighlight = {
+  before: string;
+  link?: { label: string; href: string };
+  after?: string;
+};
+
+export const experiences: {
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  highlights: ExperienceHighlight[];
+}[] = [
   {
     title: 'Full-stack Developer Intern',
-    company: 'Phu Quoc Times',
+    company: 'Phu Quoc Times Company Limited',
     location: 'Phu Quoc, Vietnam',
     period: 'July 2026 – Present',
     highlights: [
-      'Developed a multilingual (English/Vietnamese) travel website from Figma designs using Next.js (App Router), React 19, and TypeScript, translating mockups into 30+ reusable, responsive components styled with SCSS Modules and Tailwind CSS',
-      'Integrated Sanity headless CMS via GROQ queries for dynamic, editor-managed content (pages, blogs, attractions), and implemented i18n with next-intl for localized routing in 2 languages',
-      'Built an accommodation discovery page consuming a REST API with search, multi-criteria filters, sorting, and pagination',
-      'Integrated Google Maps API for interactive maps and reverse geocoding; added animations and carousels with Framer Motion and Swiper'
+      {
+        before: 'Independently built, deployed, and maintain ',
+        link: { label: 'ValentinaPhuQuoc.com', href: 'https://valentinaphuquoc.com/' },
+        after: ', a production bilingual resort website and booking platform using Next.js, TypeScript, Payload CMS, PostgreSQL, and Redis.'
+      },
+      {
+        before: 'Developed booking and room-availability workflows integrated with ezCloud, including availability checks, email verification, duplicate-request protection, and staff-managed booking processing.'
+      },
+      {
+        before: 'Implemented PostgreSQL transactions, Redis caching and rate limiting, automated testing in CI, and Docker-based deployment.'
+      },
+      {
+        before: 'Contributed frontend features to ',
+        link: { label: 'PhuQuocTimes.com', href: 'https://phuquoctimes.com/' },
+        after: ', including a responsive Tour page and reusable filtering components built with React, Next.js, TypeScript, and SCSS Modules.'
+      }
     ]
   }
 ];
 
 export const education = [
   {
-    degree: 'Bachelor of Science in Information Security',
+    degree: "Bachelor's Degree in Information Security",
     school: 'University of Information Technology — VNU-HCM',
     location: 'Ho Chi Minh City, Vietnam',
-    period: '2023 – Present',
+    period: '2023 – Expected Mar 2027',
     details: [
       'GPA: 8.24/10',
       'English: IELTS 6.0 (20/08/2022)',
@@ -160,5 +176,5 @@ export const education = [
 export const socials = [
   { label: 'GitHub', href: profile.github, icon: Github },
   { label: 'LinkedIn', href: profile.linkedin, icon: Linkedin },
-  { label: 'Email', href: gmailComposeUrl(), icon: Mail }
+  { label: 'Email', href: emailUrl(), icon: Mail }
 ];

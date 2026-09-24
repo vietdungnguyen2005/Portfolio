@@ -3,16 +3,16 @@ import { join } from 'node:path';
 
 import { describe, expect, it } from 'vitest';
 
-import { experiences, profile, projects, skillTags } from './data';
+import { experiences, profile, projects, skillGroups } from './data';
 
 describe('portfolio positioning', () => {
-  it('uses the canonical Vietnamese name and a stable personal brand', () => {
+  it('uses the canonical Vietnamese name without implying an inactive custom domain', () => {
     expect(profile.name).toBe('Nguyen Viet Dung');
-    expect(profile.brand).toBe('vietdung.dev');
+    expect(profile.brand).toBe('vietdung');
   });
 
-  it('positions the owner as a backend engineer', () => {
-    expect(profile.role).toBe('Backend Engineer Intern');
+  it('uses a role that fits the submitted Java, software developer, and full-stack CVs', () => {
+    expect(profile.role).toBe('Software Developer');
   });
 
   it('links to the canonical LinkedIn profile', () => {
@@ -21,18 +21,27 @@ describe('portfolio positioning', () => {
     );
   });
 
-  it('keeps the visible skill set focused on backend engineering', () => {
-    expect(skillTags).toEqual(
-      expect.arrayContaining(['Java 21', 'Spring Boot', 'PostgreSQL', 'Redis', 'Testcontainers'])
-    );
-    expect(skillTags).not.toEqual(expect.arrayContaining(['AWS', 'Terraform', 'Kubernetes']));
+  it('shows backend, web, and delivery skills for the submitted role families', () => {
+    expect(skillGroups.map((group) => group.title)).toEqual([
+      'Backend', 'Web', 'Data, testing & delivery'
+    ]);
+    const visibleSkills = skillGroups.flatMap((group) => group.skills);
+    expect(visibleSkills).toEqual(expect.arrayContaining([
+      'Java 21', 'Spring Boot', 'React', 'Next.js', 'PostgreSQL', 'Redis', 'JUnit 5', 'Docker'
+    ]));
+    expect(visibleSkills).not.toEqual(expect.arrayContaining(['AWS', 'Terraform', 'Kubernetes']));
   });
 
-  it('presents the three current backend case studies and their evidence', () => {
+  it('leads with V-Market while preserving the existing project repository links', () => {
     expect(projects.map((project) => project.focus)).toEqual([
+      'Transactional commerce & data ingestion',
       'Concurrency & consistency',
-      'Legacy modernization',
       'Failure containment'
+    ]);
+    expect(projects.map((project) => project.github)).toEqual([
+      'https://github.com/vietdungnguyen2005/Project2',
+      'https://github.com/vietdungnguyen2005/Project1',
+      'https://github.com/vietdungnguyen2005/Project3'
     ]);
     expect(projects.every((project) => project.evidence.startsWith('https://github.com/'))).toBe(true);
     expect(projects[2].demo).toBe(
@@ -50,10 +59,7 @@ describe('portfolio positioning', () => {
     expect(experiences[0].title).toBe('Full-stack Developer Intern');
   });
 
-  it('keeps the intern skill summary concise and evidence-based', () => {
-    expect(skillTags).toHaveLength(12);
-    expect(skillTags).toEqual(
-      expect.arrayContaining(['Java 21', 'Spring Boot', 'REST APIs', 'PostgreSQL', 'JUnit 5'])
-    );
+  it('keeps the skill summary concise and evidence-based', () => {
+    expect(skillGroups.flatMap((group) => group.skills)).toHaveLength(16);
   });
 });

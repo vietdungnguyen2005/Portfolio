@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 import { profile } from '@/lib/data';
 
-const words = ['Java 21', 'Spring Boot', 'PostgreSQL'];
+const words = ['Java 21', 'Spring Boot', 'TypeScript'];
 
 export function Hero() {
   const { scrollYProgress } = useScroll();
@@ -36,7 +36,7 @@ export function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.06, duration: 0.42 }}
           >
-            I build backends that stay correct when real-world traffic gets messy.
+            I build reliable web applications and Java backend services.
           </motion.h1>
           <motion.p
             className="mt-5 max-w-2xl text-base font-bold leading-7 text-ink/78 sm:text-lg sm:leading-8 lg:text-xl"
@@ -44,8 +44,7 @@ export function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.12, duration: 0.42 }}
           >
-            {profile.headline} My work focuses on transactions, concurrency, data migration, failure containment, and
-            integration tests that prove the difficult paths.
+            {profile.headline}
           </motion.p>
           <motion.div
             className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4"

@@ -4,31 +4,29 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
 
 import { Section } from '@/components/Section';
-import { gmailComposeUrl, profile, socials } from '@/lib/data';
+import { emailUrl, profile, socials } from '@/lib/data';
 
 export function Contact() {
   return (
-    <Section id="contact" eyebrow="Contact" title="Let's talk about backend systems.">
+    <Section id="contact" eyebrow="Contact" title="Let's build something useful.">
       <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
         <div className="border-brutal bg-peach p-5 shadow-brutalLg sm:p-7 md:p-9">
-          <p className="brutal-label inline-block bg-lemon">Open to backend internships</p>
+          <p className="brutal-label inline-block bg-lemon">Open to software engineering opportunities</p>
           <h3 className="mt-6 max-w-2xl text-2xl font-black leading-tight sm:text-3xl md:text-4xl">
-            Need someone who cares about what happens when requests race, fail, or get retried?
+            Building a product that needs both a clear interface and a dependable backend?
           </h3>
           <p className="mt-5 max-w-2xl text-base font-bold leading-7 text-[#17151f]/75 sm:text-lg">
-            I am interested in Backend Engineer internship opportunities where correctness, maintainable Java services, and clear
-            operational behavior matter.
+            I am interested in internships and entry-level roles across Java backend, software development, and
+            full-stack web engineering.
           </p>
           <motion.a
-            href={gmailComposeUrl('Backend Engineer Intern opportunity')}
-            target="_blank"
-            rel="noreferrer"
+            href={emailUrl('Software development opportunity')}
             className="btn-brutal mt-7 inline-flex bg-purple text-white"
             whileHover={{ y: -4, rotate: -1 }}
             whileTap={{ scale: 0.94 }}
           >
             <Mail size={22} aria-hidden="true" />
-            Email me
+            Get in touch
             <ArrowRight size={22} aria-hidden="true" />
           </motion.a>
         </div>
@@ -37,7 +35,7 @@ export function Contact() {
           <div className="border-brutal bg-mint p-5 shadow-brutalLg sm:p-6">
             <h3 className="text-xl font-black sm:text-2xl">Get in touch</h3>
             <div className="mt-4 space-y-3">
-              <a href={gmailComposeUrl()} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-sm font-black text-[#17151f]/80 transition-colors hover:text-[#17151f] sm:text-base">
+              <a href={emailUrl()} className="flex items-center gap-3 text-sm font-black text-[#17151f]/80 transition-colors hover:text-[#17151f] sm:text-base">
                 <Mail size={18} aria-hidden="true" />
                 {profile.email}
               </a>

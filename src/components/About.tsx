@@ -3,20 +3,20 @@
 import { motion } from 'framer-motion';
 
 import { Section } from '@/components/Section';
-import { highlights, skillTags } from '@/lib/data';
+import { highlights, skillGroups } from '@/lib/data';
 
 export function About() {
   return (
-    <Section id="about" eyebrow="Backend focus" title="Business rules first. Failure paths included.">
+    <Section id="about" eyebrow="Engineering focus" title="Backend-first, comfortable across the web stack.">
       <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8">
         <div className="border-brutal bg-mint p-5 shadow-brutalLg sm:p-6">
           <p className="text-lg font-black leading-7 sm:text-xl sm:leading-8">
-            I build Java and Spring Boot services for workflows where duplicate requests, concurrent updates, malformed
-            data, and unreliable dependencies are normal engineering constraints—not edge cases to ignore.
+            I work primarily with Java and Spring Boot for backend development, while my production experience also
+            covers TypeScript, React, Next.js, and third-party API integration.
           </p>
           <p className="mt-5 text-base font-bold leading-7 text-[#17151f]/75">
-            I model invariants explicitly, keep transactions short, make recovery observable in the domain, and verify the
-            result against real PostgreSQL and Redis instances with integration tests.
+            Across personal projects and internship work, I use PostgreSQL, Redis, automated testing, Git, CI, and
+            Docker to build and deliver useful web applications.
           </p>
         </div>
 
@@ -39,22 +39,22 @@ export function About() {
         </div>
       </div>
 
-      <div className="mt-8 min-h-48 border-brutal bg-lemon p-4 shadow-brutalLg sm:mt-10 sm:min-h-56 sm:p-5" aria-label="Backend engineering skills">
-        <p className="mb-5 font-black uppercase">Backend toolkit</p>
-        <div className="flex flex-wrap gap-2 sm:gap-3">
-          {skillTags.map((skill, index) => (
-            <motion.button
-              key={skill}
-              type="button"
-              drag
-              dragConstraints={{ top: -24, bottom: 24, left: -24, right: 24 }}
-              className="border-brutal cursor-grab bg-page px-3 py-2 text-xs font-black uppercase shadow-brutalSm active:cursor-grabbing sm:px-4 sm:py-3 sm:text-sm"
-              whileHover={{ y: -5, rotate: index % 2 ? 2 : -2 }}
-              whileTap={{ scale: 0.94 }}
-              aria-label={`${skill} skill sticker`}
-            >
-              {skill}
-            </motion.button>
+      <div className="mt-8 border-brutal bg-page p-4 shadow-brutalLg sm:mt-10 sm:p-5" aria-label="Engineering skills">
+        <p className="mb-5 font-black uppercase">Toolkit</p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {skillGroups.map((group) => (
+            <div key={group.title} className="border-brutal bg-page p-3 sm:p-4">
+              <h3 className={`border-2 border-ink px-2 py-1 text-sm font-black uppercase text-[#17151f] ${group.accent}`}>
+                {group.title}
+              </h3>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {group.skills.map((skill) => (
+                  <li key={skill} className="border-2 border-ink bg-page px-2 py-1 text-xs font-bold text-ink sm:text-sm">
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
       </div>
